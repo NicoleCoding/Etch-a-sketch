@@ -1,5 +1,13 @@
 const gridElement = document.getElementById("grid"); // Assign the grid to a constant 
 
+function changeColor(squareElement, color) {
+    squareElement.addEventListener('mouseover', () => {
+        squareElement.style.backgroundColor = color;
+    })
+
+}
+
+
 // Creates the grid with specific amount of squares
 function createGrid(size) {
     gridElement.innerHTML = ''; // Set the gridElement to empty
@@ -15,6 +23,9 @@ function createGrid(size) {
         squareElement.classList.add('square-element');
         squareElement.style.width = squareSize + 'px';
         squareElement.style.height = squareSize + 'px';
+
+        changeColor(squareElement, 'red');
+
         gridElement.appendChild(squareElement);
     
     }
